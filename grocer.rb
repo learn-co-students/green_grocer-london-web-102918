@@ -38,7 +38,15 @@ def apply_coupons(cart, coupons)
   cart
 end
 
-# not sure the above would work if the coupon count and item count were identical
+# would above would work if coupon count and item count identical?
+# would give this result when 2 avocados in the cart: 
+#
+#   COUPON {:item => "AVOCADO", :num => 2, :cost => 5.0}
+#
+#   CART {"AVOCADO" => {:price => 3.0, :clearance => true, :count
+#   => 0}, "AVOCADO W/COUPON" => {:price => 5.0, :clearance => 
+#   true, :count => 1}} 
+#
 
 def apply_clearance(cart)
   # code here

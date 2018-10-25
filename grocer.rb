@@ -48,10 +48,20 @@ end
 #   true, :count => 1}} 
 #
 
+# apply_clearance takes 20% off price if the item is on clearance
+
 def apply_clearance(cart)
-  # code here
+  cart.map do |item_name, attributes|
+    if cart[item_name][:clearance]
+      
+      #should be a way to combine next 2 lines
+      cart[item_name][:price] *= 0.8
+      cart[item_name][:price] = cart[item_name][:price].round(2)
+    end  
+  end
+  cart
 end
 
 def checkout(cart, coupons)
-  # code here
+
 end
